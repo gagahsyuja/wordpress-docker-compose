@@ -13,4 +13,8 @@ RUN pecl install redis
 
 EXPOSE 80
 
+RUN mkdir --parents /var/www/html
+
+RUN chown -R www-data:www-data /var/www/html
+
 ENTRYPOINT [ "apache2-foreground" ]
